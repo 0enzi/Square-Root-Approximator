@@ -1,22 +1,19 @@
-from re import S
+# This logic took me 2 hours to figure out
 import numpy as np
+
+iteration = 0
+PRECISION = 5
+dp = 0
+apprx = 100
 
 
 square_no = float(input("Enter a number: "))
-
-
 if square_no >= 0:
   if square_no == 0:
       print("Uhhhh..Zero??")
 else:
   print("Wait...What?")
 
-
-iteration = 0
-
-PRECISION = 5
-dp = 0
-apprx = 100
 
 def approximate(square_no: int, apprx: int):
     return 1/2*(apprx + square_no/apprx)
@@ -35,6 +32,7 @@ while dp < PRECISION:
             apprx = this_apprx
             iteration+=1
             continue
+
 
 print(f"Approximation: {apprx}, went through {iteration} iterations.")
 
